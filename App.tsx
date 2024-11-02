@@ -1,7 +1,7 @@
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
- *
+ * flex布局
  * @format
  */
 
@@ -13,70 +13,42 @@ import {
 
   StyleSheet,
   Text,
-  useColorScheme,
+
   View,
 } from 'react-native';
-
-import {
-  Colors,
-
-} from 'react-native/Libraries/NewAppScreen';
 
 
 
 function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-    ...styles,
-  };
+
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <Text>
-        TITLE.......
-      </Text>
-      <View>
-        <Text>
-          CONTENT......
-        </Text>
-        <Text>
-          CONTENT......
-        </Text>
-        <Text>
-          CONTENT......
-        </Text>
-        <Text>
-          CONTENT......
-        </Text>
-        <Text>
-          CONTENT......
-        </Text>
-        <Text>
-          CONTENT......
-        </Text>
-        <Text>
-          CONTENT......
-        </Text>
-        <Text>
-          CONTENT......
-        </Text>
-        <Text>
-          CONTENT......
-        </Text>
-        <Text>
-          CONTENT......
-        </Text>
-        <Text>
-          CONTENT......
-        </Text>
+    <SafeAreaView style={styles.safeAreaView}>
+      <View style={styles.pinkView}>
+        <Text> TITLE....... </Text>
+      </View>
+      <View style={styles.burlywoodView}>
+        <Text> CONTENT...... </Text>
+      </View>
+      <View style={styles.cyanView}>
+        <Text> CONTENT...... </Text>
+      </View>
+      <View style={styles.contentContainer}>
+        <Text> CONTENT...... </Text>
+        <Text> CONTENT...... </Text>
+        <Text> CONTENT...... </Text>
       </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  safeAreaView: {
+  flex: 1,
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+},
   sectionContainer: {
     marginTop: 32,
     paddingHorizontal: 24,
@@ -92,6 +64,27 @@ const styles = StyleSheet.create({
   },
   highlight: {
     fontWeight: '700',
+  }, pinkView: {
+    backgroundColor: 'pink',
+    // flex: 1,
+    height: 100,
+    width: 200,
+  },
+  burlywoodView: {
+    backgroundColor: 'burlywood',
+    // flex: 2,
+    height: 100,
+    width: 200,
+  },
+  cyanView: {
+    backgroundColor: 'cyan',
+    // flex: 3,
+    height: 100,
+    width: 200,
+  },
+  contentContainer: {
+    height: 100,
+    width: 200,
   },
 });
 
