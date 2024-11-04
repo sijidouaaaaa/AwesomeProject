@@ -1,3 +1,4 @@
+
 # Resolve react_native_pods.rb with node to allow for hoisting
 require Pod::Executable.execute_command('node', ['-p',
   'require.resolve(
@@ -5,9 +6,15 @@ require Pod::Executable.execute_command('node', ['-p',
     {paths: [process.argv[1]]},
   )', __dir__]).strip
 
-platform :ios, min_ios_version_supported
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/react-native-permissions/scripts/setup.rb'
+# 设置最低支持的 iOS 版本
+platform :ios, min_ios_version_supported # 你可以根据需要调整最低版本
+
+# 准备 React Native 项目
 prepare_react_native_project!
 
+# 根据环境变量决定是否使用框架链接
 linkage = ENV['USE_FRAMEWORKS']
 if linkage != nil
   Pod::UI.puts "Configuring Pod with #{linkage}ally linked Frameworks".green
@@ -15,25 +22,29 @@ if linkage != nil
 end
 
 target 'AwesomeProject' do
+  # 获取 React Native 配置
   config = use_native_modules!
 
+  # 使用 React Native 相关的 Pod
   use_react_native!(
     :path => config[:reactNativePath],
-    # An absolute path to your application root.
-    :app_path => "#{Pod::Config.instance.installation_root}/.."
+    :app_path => "#{Pod::Config.instance.installation_root}/..",
+    :hermes_enabled => true  # 确保 Hermes 引擎启用
   )
 
+
+  # 测试目标
   target 'AwesomeProjectTests' do
     inherit! :complete
     # Pods for testing
   end
 
+  # 安装后处理
   post_install do |installer|
-    # https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/react_native_pods.rb#L197-L202
     react_native_post_install(
       installer,
       config[:reactNativePath],
-      :mac_catalyst_enabled => false,
+      :mac_catalyst_enabled => false
       # :ccache_enabled => true
     )
   end

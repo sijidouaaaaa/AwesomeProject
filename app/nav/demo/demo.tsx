@@ -19,9 +19,7 @@ import {
 
 
 
-function App(): React.JSX.Element {
-
-
+export const  Demo = ()=> {
 
   return (
     <SafeAreaView style={styles.safeAreaView}>
@@ -88,4 +86,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
