@@ -17,6 +17,8 @@ import {LocalStorage} from './nav/local-storage/local-storage';
 import Animated from './nav/animated/index.tsx';
 import {MyWeb} from './nav/web-view/index.tsx';
 
+import {PickerIndex} from './nav/picker/index.tsx';
+
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 export type RootStackParamList = {
@@ -25,6 +27,7 @@ export type RootStackParamList = {
   B: undefined;
   Animated: undefined;
   MyWeb: undefined;
+  Picker: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -39,6 +42,7 @@ const screens: {
   {name: 'B', component: LocalStorage, title: '本地存储页面'},
   {name: 'Animated', component: Animated, title: '动画页面'},
   {name: 'MyWeb', component: MyWeb, title: 'MyWeb页面'},
+  {name: 'Picker', component: PickerIndex, title: 'Picker页面'},
 ];
 
 const App = () => {
