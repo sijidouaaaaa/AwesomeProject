@@ -1,6 +1,5 @@
-// Home.tsx
 import React from 'react';
-import {SafeAreaView, Button, StyleSheet} from 'react-native';
+import {SafeAreaView, TouchableOpacity, Text, StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from './App';
@@ -15,7 +14,11 @@ const NavigationButton = ({
   const navigation =
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
-    <Button title={title} onPress={() => navigation.navigate(destination)} />
+    <TouchableOpacity
+      style={styles.button}
+      onPress={() => navigation.navigate(destination)}>
+      <Text style={styles.buttonText}>{title}</Text>
+    </TouchableOpacity>
   );
 };
 
@@ -25,6 +28,7 @@ export const Home: React.FC = () => {
       <NavigationButton title="前往 A 页面" destination="A" />
       <NavigationButton title="前往 B 页面" destination="B" />
       <NavigationButton title="前往 Animated页面" destination="Animated" />
+      <NavigationButton title="前往 MyWeb页面" destination="MyWeb" />
     </SafeAreaView>
   );
 };
@@ -34,5 +38,15 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  button: {
+    backgroundColor: '#007bff',
+    padding: 10,
+    margin: 5,
+    borderRadius: 5,
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 16,
   },
 });
