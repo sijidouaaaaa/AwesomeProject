@@ -83,8 +83,9 @@ To learn more about React Native, take a look at the following resources:
 https://github.com/react-native-webview/react-native-webview?tab=readme-ov-file
 https://github.com/react-native-picker/picker
 https://github.com/leecade/react-native-swiper
+https://github.com/react-native-async-storage/async-storage
 
 yarn add @react-native-picker/picker
 yarn add react-native-webview
-yarn add react-native-safe-area-context
-yarn add react-native-screens
+yarn add react-native-swiper
+yarn add @react-native-async-storage/async-storage

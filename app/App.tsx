@@ -19,6 +19,7 @@ import {MyWeb} from './nav/web-view/index.tsx';
 
 import {PickerIndex} from './nav/picker/index.tsx';
 import {SwiperIndex} from './nav/swiper-demo/index.tsx';
+import {AsyncStorageIndex} from './nav/async-storage/index.tsx';
 
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -30,6 +31,7 @@ export type RootStackParamList = {
   MyWeb: undefined;
   Picker: undefined;
   SwiperIndex: undefined;
+  AsyncStorage: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -46,6 +48,11 @@ const screens: {
   {name: 'MyWeb', component: MyWeb, title: 'MyWeb页面'},
   {name: 'Picker', component: PickerIndex, title: 'Picker页面'},
   {name: 'SwiperIndex', component: SwiperIndex, title: 'Swiper页面'},
+  {
+    name: 'AsyncStorage',
+    component: AsyncStorageIndex,
+    title: 'AsyncStorage页面',
+  },
 ];
 
 const App = () => {
