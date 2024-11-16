@@ -78,7 +78,11 @@ To learn more about React Native, take a look at the following resources:
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
 
+第三方插件
+
 https://github.com/react-native-webview/react-native-webview?tab=readme-ov-file
+https://github.com/react-native-picker/picker
+https://github.com/leecade/react-native-swiper
 
 yarn add @react-native-picker/picker
 yarn add react-native-webview

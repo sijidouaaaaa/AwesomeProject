@@ -30,6 +30,7 @@ export const Home: React.FC = () => {
       <NavigationButton title="前往 Animated页面" destination="Animated" />
       <NavigationButton title="前往 MyWeb页面" destination="MyWeb" />
       <NavigationButton title="前往Picker页面" destination="Picker" />
+      <NavigationButton title="前往Swiper页面" destination="SwiperIndex" />
     </SafeAreaView>
   );
 };

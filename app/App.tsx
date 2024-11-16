@@ -18,6 +18,7 @@ import Animated from './nav/animated/index.tsx';
 import {MyWeb} from './nav/web-view/index.tsx';
 
 import {PickerIndex} from './nav/picker/index.tsx';
+import {SwiperIndex} from './nav/swiper-demo/index.tsx';
 
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -28,6 +29,7 @@ export type RootStackParamList = {
   Animated: undefined;
   MyWeb: undefined;
   Picker: undefined;
+  SwiperIndex: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -43,6 +45,7 @@ const screens: {
   {name: 'Animated', component: Animated, title: '动画页面'},
   {name: 'MyWeb', component: MyWeb, title: 'MyWeb页面'},
   {name: 'Picker', component: PickerIndex, title: 'Picker页面'},
+  {name: 'SwiperIndex', component: SwiperIndex, title: 'Swiper页面'},
 ];
 
 const App = () => {
