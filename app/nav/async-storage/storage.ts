@@ -1,5 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+// 简单封装
 export class Storage {
   /**
    *添加数据
