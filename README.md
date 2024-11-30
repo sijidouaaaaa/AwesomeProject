@@ -80,12 +80,17 @@ To learn more about React Native, take a look at the following resources:
 
 第三方插件
 
-https://github.com/react-native-webview/react-native-webview?tab=readme-ov-file
-https://github.com/react-native-picker/picker
-https://github.com/leecade/react-native-swiper
-https://github.com/react-native-async-storage/async-storage
+https://github.com/react-native-webview/react-native-webview?tab=readme-ov-file // webview
+https://github.com/react-native-picker/picker // 选择器
+https://github.com/leecade/react-native-swiper // 轮播
+https://github.com/react-native-async-storage/async-storage // 本地存储
+react-native-geolocation // 定位
+https://github.com/mrousavy/react-native-vision-camera
 
 yarn add @react-native-picker/picker
 yarn add react-native-webview
 yarn add react-native-swiper
 yarn add @react-native-async-storage/async-storage
+npm i react-native-vision-camera
+
+yarn add react-native-image-picker

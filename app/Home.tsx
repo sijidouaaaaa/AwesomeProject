@@ -35,6 +35,10 @@ export const Home: React.FC = () => {
         title="前往AsyncStorage页面"
         destination="AsyncStorage"
       />
+      <NavigationButton
+        title="前往CameraScreen页面"
+        destination="CameraScreen"
+      />
     </SafeAreaView>
   );
 };
